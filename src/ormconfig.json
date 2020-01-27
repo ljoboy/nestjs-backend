@@ -1,0 +1,14 @@
+[
+  {
+    "name": "default",
+    "type": "sqlite",
+    "host": "127.0.0.1",
+    "port": 0,
+    "username": "",
+    "password": "",
+    "database": "../db",
+    "schema": "",
+    "synchronize": false,
+    "entities": ["entities/*.js"]
+  }
+]
