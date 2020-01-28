@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import {TypeOrmModule} from "@nestjs/typeorm";
 import { ContactsModule } from './contacts/contacts.module';
 import { EmailsModule } from './emails/emails.module';
+import { PhonesModule } from './phones/phones.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -12,7 +13,7 @@ import { EmailsModule } from './emails/emails.module';
     synchronize: true,
     logging: true,
     entities: [__dirname + '/**/entities/*{.ts,.js}'],
-  }), ContactsModule, EmailsModule,],
+  }), ContactsModule, EmailsModule, PhonesModule,],
   controllers: [AppController],
   providers: [AppService],
 })
