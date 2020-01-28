@@ -6,6 +6,8 @@ import { ContactsModule } from './contacts/contacts.module';
 import { EmailsModule } from './emails/emails.module';
 import { PhonesModule } from './phones/phones.module';
 import { WebsitesModule } from './websites/websites.module';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -14,7 +16,7 @@ import { WebsitesModule } from './websites/websites.module';
     synchronize: true,
     logging: true,
     entities: [__dirname + '/**/entities/*{.ts,.js}'],
-  }), ContactsModule, EmailsModule, PhonesModule, WebsitesModule,],
+  }), ContactsModule, EmailsModule, PhonesModule, WebsitesModule, AuthModule, UsersModule,],
   controllers: [AppController],
   providers: [AppService],
 })
