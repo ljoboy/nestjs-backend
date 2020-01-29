@@ -3,9 +3,18 @@ import { ContactsService } from './contacts.service';
 import { ContactsController } from './contacts.controller';
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {Contacts} from "../entities/Contacts";
+import {PassportModule} from "@nestjs/passport";
+import {JwtModule} from "@nestjs/jwt";
+import {jwtConstants} from "../auth/constants";
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Contacts])],
+  imports: [
+    PassportModule.register({ defaultStrategy: 'jwt' }),
+    JwtModule.register({
+      secret: jwtConstants.secret,
+      signOptions: { expiresIn: '60s' },
+    }),
+    TypeOrmModule.forFeature([Contacts])],
   providers: [ContactsService],
   exports: [ContactsService],
   controllers: [ContactsController]
