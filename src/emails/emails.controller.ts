@@ -1,8 +1,10 @@
-import { Controller } from '@nestjs/common';
+import {Controller, UseGuards} from '@nestjs/common';
 import {Crud, CrudController} from "@nestjsx/crud";
 import {Emails} from "../entities/Emails";
 import {EmailsService} from "./emails.service";
+import {AuthGuard} from "@nestjs/passport";
 
+@UseGuards(AuthGuard('jwt'))
 @Crud({model: {
         type: Emails
     }
