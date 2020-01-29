@@ -21,11 +21,6 @@ import {jwtConstants} from "./auth/constants";
       logging: true,
       entities: [__dirname + '/**/entities/*{.ts,.js}'],
     }),
-    PassportModule.register({ defaultStrategy: 'jwt' }),
-    JwtModule.register({
-      secret: jwtConstants.secret,
-      signOptions: { expiresIn: '60s' },
-    }),
   ],
   controllers: [AppController],
   providers: [AppService],

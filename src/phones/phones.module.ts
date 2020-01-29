@@ -9,11 +9,6 @@ import {jwtConstants} from "../auth/constants";
 
 @Module({
   imports: [
-    PassportModule.register({ defaultStrategy: 'jwt' }),
-    JwtModule.register({
-      secret: jwtConstants.secret,
-      signOptions: { expiresIn: '60s' },
-    }),
     TypeOrmModule.forFeature([Phones])],
   controllers: [PhonesController],
   providers: [PhonesService],

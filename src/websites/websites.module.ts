@@ -11,11 +11,6 @@ import {jwtConstants} from "../auth/constants";
   providers: [WebsitesService],
   controllers: [WebsitesController],
   imports: [
-    PassportModule.register({ defaultStrategy: 'jwt' }),
-    JwtModule.register({
-      secret: jwtConstants.secret,
-      signOptions: { expiresIn: '60s' },
-    }),
     TypeOrmModule.forFeature([Websites])],
   exports: [WebsitesService]
 })
