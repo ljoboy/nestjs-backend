@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { EmailsController } from './emails.controller';
 import { EmailsService } from './emails.service';
-import {Emails} from "../entities/Emails";
+import {Emails} from "./entities/Emails";
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {PassportModule} from "@nestjs/passport";
 import {JwtModule} from "@nestjs/jwt";

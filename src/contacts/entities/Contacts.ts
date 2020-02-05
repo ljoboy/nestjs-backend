@@ -1,17 +1,18 @@
 import {
+  BaseEntity,
   Column,
   Entity,
   Index,
   OneToMany,
   PrimaryGeneratedColumn
 } from "typeorm";
-import { Emails } from "./Emails";
-import { Phones } from "./Phones";
-import { Websites } from "./Websites";
+import { Emails } from "../../emails/entities/Emails";
+import { Phones } from "../../phones/entities/Phones";
+import { Websites } from "../../websites/entities/Websites";
 
 @Index("identity", ["nom", "postnom", "prenom"], {})
 @Entity("contacts")
-export class Contacts {
+export class Contacts extends BaseEntity {
   @PrimaryGeneratedColumn({ type: "integer", name: "id" })
   id: number;
 

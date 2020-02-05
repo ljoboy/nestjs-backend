@@ -1,6 +1,6 @@
 import {Controller, UseGuards} from '@nestjs/common';
 import {Crud, CrudController} from "@nestjsx/crud";
-import {Users} from "../entities/Users";
+import {Users} from "./entities/Users";
 import {UsersService} from "./users.service";
 import {AuthGuard} from "@nestjs/passport";
 

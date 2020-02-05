@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { PhonesController } from './phones.controller';
 import { PhonesService } from './phones.service';
 import {TypeOrmModule} from "@nestjs/typeorm";
-import {Phones} from "../entities/Phones";
+import {Phones} from "./entities/Phones";
 import {PassportModule} from "@nestjs/passport";
 import {JwtModule} from "@nestjs/jwt";
 import {jwtConstants} from "../auth/constants";

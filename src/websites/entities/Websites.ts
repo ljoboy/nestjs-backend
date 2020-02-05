@@ -1,26 +1,27 @@
 import {
+  BaseEntity,
   Column,
   Entity,
   JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn
 } from "typeorm";
-import { Contacts } from "./Contacts";
+import { Contacts } from "../../contacts/entities/Contacts";
 
-@Entity("phones")
-export class Phones {
+@Entity("websites")
+export class Websites extends BaseEntity {
   @PrimaryGeneratedColumn({ type: "integer", name: "id" })
   id: number;
 
-  @Column("text", { name: "number" })
-  number: string;
+  @Column("text", { name: "site" })
+  site: string;
 
   @Column("text", { name: "type" })
   type: string;
 
   @ManyToOne(
     () => Contacts,
-    contacts => contacts.phones,
+    contacts => contacts.websites,
     { onDelete: "CASCADE", onUpdate: "CASCADE" }
   )
   @JoinColumn([{ name: "idContact", referencedColumnName: "id" }])
