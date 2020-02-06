@@ -2,14 +2,11 @@ import { Module } from '@nestjs/common';
 import { PhonesController } from './phones.controller';
 import { PhonesService } from './phones.service';
 import {TypeOrmModule} from "@nestjs/typeorm";
-import {Phones} from "./entities/Phones";
-import {PassportModule} from "@nestjs/passport";
-import {JwtModule} from "@nestjs/jwt";
-import {jwtConstants} from "../auth/constants";
+import {PhonesReposity} from "./phones.reposity";
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Phones])],
+    TypeOrmModule.forFeature([PhonesReposity])],
   controllers: [PhonesController],
   providers: [PhonesService],
   exports: [PhonesService]
