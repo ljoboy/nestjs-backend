@@ -4,7 +4,7 @@ import {Phones} from "./entities/Phones";
 import {PhonesService} from "./phones.service";
 import {AuthGuard} from "@nestjs/passport";
 
-@UseGuards(AuthGuard('jwt'))
+// @UseGuards(AuthGuard('jwt'))
 @Crud({model: {
         type: Phones
     }

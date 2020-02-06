@@ -4,7 +4,7 @@ import {WebsitesService} from "./websites.service";
 import {Websites} from "./entities/Websites";
 import {AuthGuard} from "@nestjs/passport";
 
-@UseGuards(AuthGuard('jwt'))
+// @UseGuards(AuthGuard('jwt'))
 @Crud({model: {
         type: Websites
     }

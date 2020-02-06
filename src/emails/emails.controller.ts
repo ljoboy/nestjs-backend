@@ -4,7 +4,7 @@ import {Emails} from "./entities/Emails";
 import {EmailsService} from "./emails.service";
 import {AuthGuard} from "@nestjs/passport";
 
-@UseGuards(AuthGuard('jwt'))
+// @UseGuards(AuthGuard('jwt'))
 @Crud({model: {
         type: Emails
     }
