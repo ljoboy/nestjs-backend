@@ -13,7 +13,7 @@ import { AuthModule } from './auth/auth.module';
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'db',
-      synchronize: true,
+      synchronize: false,
       logging: true,
       entities: [__dirname + '/**/entities/*{.ts,.js}'],
     }),
