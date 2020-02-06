@@ -12,6 +12,10 @@ export class Users extends BaseEntity {
   @Column("text", { name: "password" })
   password: string;
 
+  @Column("text", { name: "salt" })
+  salt: string;
+
   @Column("text", { name: "img", nullable: true })
   img: string | null;
+
 }
