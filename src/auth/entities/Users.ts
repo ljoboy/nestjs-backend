@@ -20,7 +20,10 @@ export class Users extends BaseEntity {
   @Column("text", { name: "img", nullable: true })
   img: string | null;
 
-  @OneToMany(type => Contacts, contacts => contacts.user, { eager: true })
+  @OneToMany(
+    type => Contacts,
+    contacts => contacts.user
+  )
   contacts: Contacts[];
 
   async validatePassword(password: string): Promise<boolean> {

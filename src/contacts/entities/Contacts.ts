@@ -2,7 +2,7 @@ import {
   BaseEntity,
   Column,
   Entity,
-  Index, ManyToOne,
+  Index, JoinColumn, ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn
 } from "typeorm";
@@ -62,6 +62,11 @@ export class Contacts extends BaseEntity {
   )
   websites: Websites[];
 
-  @ManyToOne(type => Users, user => user.contacts, { eager: false })
+  @ManyToOne(
+    () => Users,
+    users => users.contacts,
+    { onDelete: "CASCADE", onUpdate: "CASCADE" }
+  )
+  @JoinColumn({ name: "user", referencedColumnName: "id" })
   user: Users;
 }
