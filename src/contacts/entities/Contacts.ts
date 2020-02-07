@@ -2,13 +2,14 @@ import {
   BaseEntity,
   Column,
   Entity,
-  Index,
+  Index, ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn
 } from "typeorm";
 import { Emails } from "../../emails/entities/Emails";
 import { Phones } from "../../phones/entities/Phones";
 import { Websites } from "../../websites/entities/Websites";
+import {Users} from "../../auth/entities/Users";
 
 @Index("identity", ["nom", "postnom", "prenom"], {})
 @Entity("contacts")
@@ -60,4 +61,7 @@ export class Contacts extends BaseEntity {
     websites => websites.idContact
   )
   websites: Websites[];
+
+  @ManyToOne(type => Users, user => user.contacts, { eager: false })
+  user: Users;
 }
