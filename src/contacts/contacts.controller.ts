@@ -4,7 +4,7 @@ import {Contacts} from "./entities/Contacts";
 import {ContactsService} from "./contacts.service";
 import {AuthGuard} from "@nestjs/passport";
 
-// @UseGuards(AuthGuard('jwt'))
+@UseGuards(AuthGuard())
 @Crud({model: {
         type: Contacts
     }
