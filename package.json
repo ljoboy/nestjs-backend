@@ -28,7 +28,7 @@
     "@nestjs/typeorm": "^6.2.0",
     "@nestjsx/crud": "^4.4.1",
     "@nestjsx/crud-typeorm": "^4.4.1",
-    "bcrypt": "^3.0.8",
+    "bcrypt": "^5.0.0",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.11.0",
     "passport": "^0.4.1",
